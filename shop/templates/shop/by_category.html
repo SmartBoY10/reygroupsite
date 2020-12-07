@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+    <div class='banner'>
+		<div class="banner__pattern-scene" data-id='scene'>
+			<div class="banner__pattern" data-depth='0.2'></div>
+		</div>
+		<div class="container">
+			<div class="banner__slider ">
+        
+				<div class="row banner__slide jc-sb ai-c">
+					<div class="banner__col-6" data-aos='fade-right' data-aos-duration='1500'>
+						<div class="banner__info" >
+							<img src="img/icons/logo-mobile.svg" alt="">
+							<h1 class='title'>Продуктовый магазин Rey</h1>
+							<p class='banner__subtitle'>Только свежие продукты</p>
+						</div>
+					</div>
+					<div class="banner__col-5" data-aos='fade-left' data-aos-duration='1500'>
+						<div class="banner__img"  >
+							<img class='resizable'  src="img/iphone.png" alt="">
+						</div>
+					</div>
+                </div>
+                
+				<div class="row banner__slide jc-sb ai-c">
+					<div class="banner__col-6">
+						<div class="banner__info">
+							<h1 class='title'>Продуктовый магазин Rey </h1>
+							<p class='banner__subtitle'>Только свежие продукты</p>
+						</div>
+					</div>
+					<div class="banner__col-5">
+						<div class="banner__img">
+							<img class='resizable' src="img/iphone.png" alt="">
+						</div>
+					</div>
+                </div>
+                
+			</div>
+		</div>
+	</div>
+    
+    <section class="about block-gutter" id='about'>
+        {% for item in about_us %}
+		<div class="about__content">
+			<div class="about__container container">
+				<h2 class='section-title'>О нас</h2>
+				<div class="about__body" data-aos='fade-right' data-aos-duration='1500'>
+					<h3 class='about__title'>
+						{{ item.title }}
+					</h3>
+					<p class='about__text text'>
+                         {{ item.content|capfirst }}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="about__image" >
+			<img src="{{ item.photo.url }}" alt="" data-aos='flip-down' data-aos-duration='1500'>
+        </div>
+        {% endfor %}
+	</section>
+    
+	<section class="products block-gutter" id='products'>
+    <div class="container products__title-wrap">
+        <h2 class='section-title products__block-title'>Наши продукты</h2>
+    </div>
+    
+    <div class="select" data-da='products__title-wrap,1,992'>
+		
+        <div class="select__header flex ai-c jc-c">
+            <span class='select__current text'></span>
+            <div class="select__icon">
+                <img src="{% static 'img/icons/arrow-down.svg' %}" alt="">
+            </div>
+        </div>
+        
+        <div class="select__body">
+            {% for item in categories %}			
+            <a href="/category/{{ item.pk }}/"></a><div class="select__item text" data-type='honey' value="{{ item.title }}">{{ item.title }}</div></a>
+            {% endfor %}	
+        </div>
+        
+    </div>
+    
+    <div class="products__slider" data-type='honey' data-aos='zoom-in' data-aos-duration='1500'>
+        {% for item in products %}
+        <div class="products__slide-wrap  ai-c">
+            <div class="products__content">
+                <div class="products__container container">
+                    <div class='products__body'>
+                        <!-- <div class="select" data-da='products__title-wrap,1,992'>
+                            <div class="select__header flex ai-c jc-c">
+                                <span class='select__current text'>Мёд</span>
+                                <div class="select__icon">
+                                    <img src="img/icons/arrow-down.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="select__body">
+                                <div class="select__item text" data-type='honey'>Мёд</div>
+                                <div class="select__item text" data-type='mountain-honey'>Полевой мёд</div>
+                                <div class="select__item text" data-type='another-honey'>Акациевый мёд</div>
+                            </div>
+                        </div> -->
+                        <h3 class='products__title'>{{ item.name }}</h3>
+                        <p class='text-sm products__text'>
+                            {{ item.content }} 
+                        </p>
+                        <span class='text products__price'>
+                            Цена: {{ item.price }} сум
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class='products__image'>
+                {% if item.photo %}
+                <img class='resizable' src="{{ item.photo.url }}" alt="">3
+                {% endif%}
+                <div class='sliders-count'>
+                    <span class='start'></span>
+                    <span class='end'></span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div> 
+
+    <div class="products__slider" data-type='mountain-honey' data-aos='zoom-in' data-aos-duration='1500'>
+        {% for item in mountain %}
+        <div class="products__slide-wrap  ai-c">
+            <div class="products__content">
+                <div class="products__container container">
+                    <div class='products__body'>
+                        <!-- <div class="select" data-da='products__title-wrap,1,992'>
+                            <div class="select__header flex ai-c jc-c">
+                                <span class='select__current text'>Мёд</span>
+                                <div class="select__icon">
+                                    <img src="img/icons/arrow-down.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="select__body">
+                                <div class="select__item text" data-type='honey'>Мёд</div>
+                                <div class="select__item text" data-type='mountain-honey'>Полевой мёд</div>
+                                <div class="select__item text" data-type='another-honey'>Акациевый мёд</div>
+                            </div>
+                        </div> -->
+                        <h3 class='products__title'>{{ item.title }}</h3>
+                        <p class='text-sm products__text'>
+                            {{ item.content }} 
+                        </p>
+                        <span class='text products__price'>
+                            Цена: {{ item.price }} сум
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class='products__image'>
+                <img class='resizable' src="img/product.jpg" alt="">3
+                <div class='sliders-count'>
+                    <span class='start'></span>
+                    <span class='end'></span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="products__slider" data-type='another-honey' data-aos='zoom-in' data-aos-duration='1500'>
+        {% for item in another %}
+        <div class="products__slide-wrap  ai-c">
+            <div class="products__content">
+                <div class="products__container container">
+                    <div class='products__body'>
+                        <!-- <div class="select" data-da='products__title-wrap,1,992'>
+                            <div class="select__header flex ai-c jc-c">
+                                <span class='select__current text'>Мёд</span>
+                                <div class="select__icon">
+                                    <img src="img/icons/arrow-down.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="select__body">
+                                <div class="select__item text" data-type='honey'>Мёд</div>
+                                <div class="select__item text" data-type='mountain-honey'>Полевой мёд</div>
+                                <div class="select__item text" data-type='another-honey'>Акациевый мёд</div>
+                            </div>
+                        </div> -->
+                        <h3 class='products__title'>{{ item.title }}</h3>
+                        <p class='text-sm products__text'>
+                            {{ item.content }}
+                        </p>
+                        <span class='text products__price'>
+                            Цена: {{ item.price }} сум
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class='products__image'>
+                <img class='resizable' src="img/product.jpg" alt="">3
+                <div class='sliders-count'>
+                    <span class='start'></span>
+                    <span class='end'></span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </section>
+	
+	<section class="advantages block-gutter">
+		<div class="container">
+			<h2 class='section-title advantages__title'>
+				Наши преимущества
+			</h2>
+			<div class="advantages__row row jc-sb">
+				<div class="advantages__col-3" data-aos='fade-up' data-aos-duration='1500'>
+					<div class="advantages__item">
+						<img class='advantages__icon' src="{% static 'img/icons/quality.svg' %}" alt="">
+						<p class='advantages__text text'>Только свежие и натуральные
+							продукты</p>
+					</div>
+				</div>
+				<div class="advantages__col-3" data-aos='fade-up' data-aos-duration='1500' data-aos-delay='400'>
+					<div class="advantages__item">
+						<img class='advantages__icon' src="{% static 'img/icons/collaboration.svg' %}" alt="">
+						<p class='advantages__text text'>Выгодные и удобные условия 
+							для партнеров</p>
+					</div>
+				</div>
+				<div class="advantages__col-3" data-aos='fade-up' data-aos-duration='1500' data-aos-delay='700'>
+					<div class="advantages__item">
+						<img class='advantages__icon' src="{% static 'img/icons/shield.svg' %}" alt="">
+						<p class='advantages__text text'>Соблюдены все необходимые 
+							меры безопасности</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact" id='contacts'>
+		<div class="contact__inner flex">
+			<div class="contact__content block-gutter">
+				<div class="contact__content-pattern" data-id='scene'>
+					<div class="contact__content-pattern-img" data-depth='0.2'></div>
+				</div>
+				<div class="contact__container container">
+					<a href="#" class='logo contact__logo'>
+						<img src="img/contact-logo.svg" alt="">
+					</a>
+					<h2 class='section-title section-title_light' data-alt='Напишите нам:'>
+						Свяжитесь с нами
+					</h2>
+					<div class='contact__body'>
+						<form class='form' action="" data-aos='zoom-in ' data-aos-delay="500">
+							<label class='form__label'>
+								<span>Имя</span>
+								<input type="text" class='form__input' required name='name' placeholder="Напишите ваше имя">
+							</label>
+							<label class='form__label'>
+								<span>Почта</span>
+								<input type="email" class='form__input' required name='email' placeholder="Напишите адрес вашей почты">
+							</label>
+							<label class='form__label'>
+								<span>Номер телефона</span>
+								<input type="text" class='form__input' required name='tel' placeholder="99 8(хх) ххх-хх-хх ">
+							</label>
+							<label class='form__label'>
+								<span>Сообщение</span>
+								<textarea  class='form__input form__textarea' name="message" placeholder="Напишите сообщение..."></textarea>
+							</label>
+							<input type="submit" class='form__btn'>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class='contact__map'>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5823.3285088030125!2d69.24404528673064!3d41.30924412284962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1601485089166!5m2!1sru!2s"  frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+		</div>
+    </section> 
+    {% endblock %}

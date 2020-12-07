@@ -1,0 +1,51 @@
+{% load static %}
+<header class="header">
+    <div class="container">
+        <div class="header__row flex jc-sb ai-c">
+            <p class='header__text'>Только свежие продкуты</p>
+            <a class='logo' href="#">
+                <img src="{% static 'img/logo.svg' %}" alt="Logo">
+            </a>
+            <div class="header__links flex">
+                <nav class='nav'>
+                    <ul class='flex'>
+                        <li>
+                            <a href="#about">О нас</a>
+                        </li>
+                        <li>
+                            <a href="#products">Продукция</a>
+                        </li>
+                        <li>
+                            <a href="#contacts">Контакты</a>
+                        </li>
+                    </ul>
+                    <div class="nav__close">
+
+                    </div>
+                </nav>
+                <ul class='header__social flex'>
+                    <li>
+                        <a href="https://www.instagram.com/reygroup.co/">
+                            <img src="{% static 'img/icons/instagram.svg' %}" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://telegram.org/">
+                            <img src="{% static 'img/icons/telegram.svg' %}" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="{% static 'img/icons/fb.svg' %}" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <div class="burger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
