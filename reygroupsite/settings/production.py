@@ -223,3 +223,5 @@ EMAIL_HOST_USER = 'qurol.django99@gmail.com'
 EMAIL_HOST_PASSWORD = 'shiriksaidova99*'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
