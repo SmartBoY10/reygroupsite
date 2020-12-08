@@ -14,7 +14,7 @@ def index(request):
         if form.is_valid():
             mail = send_mail(
                 form.cleaned_data['name'],  
-                form.cleaned_data['number'], 
+                form.cleaned_data['email', 'number', 'content'], 
                 'qurol.django99@gmail.com', 
                 ['qurol.abdujalilov99@gmail.com'], 
                 fail_silently=True)
