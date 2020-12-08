@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-09 00:26+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\shop\templates\shop\index.html:56
+msgid "Наши продукты"
+msgstr "Our products"
+
+#: .\shop\templates\shop\index.html:143
+msgid "Цена"
+msgstr "Price"
+
+#: .\shop\templates\shop\index.html:143
+msgid "сум"
+msgstr "sum"
+
+#: .\shop\templates\shop\index.html:207
+msgid "Наши преимущества"
+msgstr "Our advantages"
+
+#: .\shop\templates\shop\index.html:213
+msgid "Только свежие и натуральные продукты"
+msgstr "Only fresh products"
+
+#: .\shop\templates\shop\index.html:219
+msgid "Выгодные и удобные условия для партнеров"
+msgstr "Favorable and convenient conditions for partners"
+
+#: .\shop\templates\shop\index.html:225
+msgid "Соблюдены все необходимые меры безопасности"
+msgstr "All necessary safety measures have been followed"
+
+#: .\shop\templates\shop\index.html:243
+msgid "Свяжитесь с нами"
+msgstr "Contact us"
+
+#: .\shop\templates\shop\index.html:253
+msgid "Имя"
+msgstr "Name"
+
+#: .\shop\templates\shop\index.html:263
+msgid "Почта"
+msgstr "Email"
+
+#: .\shop\templates\shop\index.html:272
+msgid "Номер телефона"
+msgstr "Phone number"
+
+#: .\shop\templates\shop\index.html:281
+msgid "Сообщение"
+msgstr "Message"
+
+#: .\templates\inc\_footer.html:9 .\templates\inc\_footer.html:36
+msgid "Наши контакты"
+msgstr "Our contacts"
+
+#: .\templates\inc\_footer.html:27
+msgid "г. Ташкент, Юнусабадский р-н, ул. Юнусабад, д. 8"
+msgstr "Tashkent, Yunusabad district, st. Yunusabad, 8"
+
+#: .\templates\inc\_header.html:5
+msgid "Только свежие продкуты"
+msgstr "Only fresh products"
+
+#: .\templates\inc\_header.html:13
+msgid "О нас"
+msgstr "About us"
+
+#: .\templates\inc\_header.html:16
+msgid "Продукция"
+msgstr "Products"
+
+#: .\templates\inc\_header.html:19
+msgid "Контакты"
+msgstr "Contacts"

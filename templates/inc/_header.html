@@ -1,8 +1,8 @@
-{% load static %}
+{% load i18n static %}
 <header class="header">
     <div class="container">
         <div class="header__row flex jc-sb ai-c">
-            <p class='header__text'>Только свежие продкуты</p>
+            <p class='header__text'>{% trans "Только свежие продкуты" %}</p>
             <a class='logo' href="#">
                 <img src="{% static 'img/logo.svg' %}" alt="Logo">
             </a>
@@ -10,13 +10,13 @@
                 <nav class='nav'>
                     <ul class='flex'>
                         <li>
-                            <a href="#about">О нас</a>
+                            <a href="#about">{% trans "О нас" %}</a>
                         </li>
                         <li>
-                            <a href="#products">Продукция</a>
+                            <a href="#products">{% trans "Продукция" %}</a>
                         </li>
                         <li>
-                            <a href="#contacts">Контакты</a>
+                            <a href="#contacts">{% trans "Контакты" %}</a>
                         </li>
                     </ul>
                     <div class="nav__close">
@@ -38,6 +38,24 @@
                         <a href="#">
                             <img src="{% static 'img/icons/fb.svg' %}" alt="">
                         </a>
+                    </li>
+                    <li>
+                    <li>
+                        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}">
+                            <select name="language">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                            selected{% endif %}>
+                                        {{ language.name_local }} ({{ language.code }})
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <input type="submit" value="Go">
+                        </form>
                     </li>
                 </ul>
                 <div class="burger">
